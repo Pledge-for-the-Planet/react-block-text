@@ -692,7 +692,7 @@ function ReactBlockText({
       const previousLinesCharacterCount = characterCounts
         .map((x, i, a) => i < a.length - 1 ? x : 0)
         .reduce((sum, x) => sum + x + 1, 0) - 2 // Magic -2 -> first and last carriage return
-      const previousLineCharacterCount = characterCounts[characterCounts.length - 2] + 1 ?? 0
+      const previousLineCharacterCount = (characterCounts[characterCounts.length - 2] ?? 0) + 1
       const lastLineCharacterCount = characterCounts[characterCounts.length - 1] ?? 0
 
       // Edge case
